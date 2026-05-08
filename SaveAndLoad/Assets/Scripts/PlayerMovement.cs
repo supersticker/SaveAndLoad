@@ -18,12 +18,12 @@ public class PlayerMovement : MonoBehaviour
         playerRb.linearVelocity = moveInput * moveSpeed;
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Coin"))
+        if (collision.gameObject.CompareTag("Coin"))
         {
             GameManager.AddScore();
+
             Destroy(collision.gameObject);
         }
     }

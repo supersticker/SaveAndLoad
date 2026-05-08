@@ -6,8 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] TextMeshProUGUI scoreDisplay;
-    [SerializeField] int score = 0;
-
+    [SerializeField] public int score = 0;
 
     private void Awake()
     {
@@ -17,6 +16,11 @@ public class GameManager : MonoBehaviour
     public static void AddScore()
     {
         instance.score++;
+        UpdateUi();
+    }
+
+    public static void UpdateUi()
+    {
         instance.scoreDisplay.text = instance.score.ToString();
     }
 }
