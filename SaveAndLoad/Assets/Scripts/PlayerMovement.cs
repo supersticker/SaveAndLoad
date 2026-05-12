@@ -26,5 +26,10 @@ public class PlayerMovement : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
+
+        if(collision.gameObject.CompareTag("Door"))
+        {
+            GameManager.LoadNextLevel();
+        }
     }
 }
